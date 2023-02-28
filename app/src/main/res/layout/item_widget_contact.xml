@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="10dp"
+            android:textColor="#ff333333"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="A" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clUser"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:background="?selectableItemBackground"
+            android:duplicateParentState="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <com.hyphenate.easeui.widget.EaseImageView
+                android:id="@+id/avatar"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ease_default_avatar"
+                app:ease_shape_type="round"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:rotation="45"
+                android:textColor="@color/em_color_brand"
+                android:textSize="@dimen/em_size_small"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="@id/avatar"
+                app:layout_constraintTop_toTopOf="@id/avatar"
+                tools:text="群主" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="34dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#ff333333"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/signature"
+                app:layout_constraintLeft_toRightOf="@id/avatar"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="测试沙发斯蒂芬水电费水电费水电费地方水电费是否" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/signature"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#888888"
+                android:textSize="13sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/avatar"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                tools:text="历史记录路上的风景四六级零售价分离老司机代理费是的了房间数量的风景" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/ease_unread_dot"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/bottom_line"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="64dp"
+                android:background="@color/em_base_color_divider"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

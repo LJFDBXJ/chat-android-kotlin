@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:background="@color/transparent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_headImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            tools:src="@tools:sample/avatars"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_showSelect"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_headImage"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="114dp"
+            tools:text="@tools:sample/full_names"
+            android:textColor="#4C4C4C"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</layout>

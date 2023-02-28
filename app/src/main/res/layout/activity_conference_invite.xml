@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/em_common_title_bar_height"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleBarDisplayHomeAsUpEnabled="true"
+            app:titleBarTitle="@string/Select_the_contact" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contactRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/btnStart"
+            app:layout_constraintTop_toBottomOf="@id/titleBar"
+            tools:listitem="@layout/item_user_card" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/adaptive_52dp"
+            android:background="@drawable/demo_btn_bg_conference_start"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="@string/button_start_video_conference"
+            android:textColor="#FFF"
+            android:textSize="@dimen/adaptive_18sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

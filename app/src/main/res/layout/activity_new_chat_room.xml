@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/em_common_title_bar_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleBarDisplayHomeAsUpEnabled="true"
+            app:titleBarRightTitle="@string/em_chat_room_new_save"
+            app:titleBarRightVisible="true"
+            app:titleBarTitle="@string/em_chat_room_new_title" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_group_name"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/demo_et_normal_shape"
+            android:hint="@string/em_chat_room_new_name_hint"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etGroupIntroduction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/demo_et_normal_shape"
+            android:gravity="top"
+            android:hint="@string/em_chat_room_new_profile_hint"
+            android:lines="5"
+            android:padding="5dp"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_group_name" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/welcomeDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/demo_et_normal_shape"
+            android:gravity="top"
+            android:hint="@string/em_chat_room_new_profile_welcome"
+            android:lines="5"
+            android:padding="5dp"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etGroupIntroduction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

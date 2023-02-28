@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_bg"
+        android:orientation="vertical">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/em_common_title_bar_height"
+            android:background="@color/white"
+            app:titleBarDisplayHomeAsUpEnabled="true"
+            app:titleBarTitle="@string/em_user_detail_avatar" />
+
+        <com.hyphenate.easeui.widget.EaseRecyclerView
+            android:id="@+id/headImageListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+        <TextView
+            android:id="@+id/btn_headImage_save"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/headImage_ListView"
+            android:layout_gravity="center"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/demo_headimage_save"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/save"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>

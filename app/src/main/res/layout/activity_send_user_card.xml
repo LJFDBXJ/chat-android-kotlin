@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/infoView"
+        android:layout_width="80dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="发送给:"
+        android:textColor="#FF424242"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/headView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/infoView"
+        app:layout_constraintTop_toBottomOf="@id/infoView"
+        tools:src="@drawable/em_login_logo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNickName"
+        android:layout_width="150dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="35dp"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/headView"
+        app:layout_constraintTop_toBottomOf="@id/infoView"
+        tools:hint="用户姓名" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userIdView"
+        android:layout_width="276dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/infoView"
+        app:layout_constraintTop_toBottomOf="@id/headView"
+        tools:hint="@string/personal_card" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/btnSend"
+        app:layout_constraintStart_toStartOf="@id/userIdView"
+        app:layout_constraintTop_toBottomOf="@id/userIdView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSend"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:text="@string/confirm"
+        android:textColor="#04AEF0"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnCancel"
+        app:layout_constraintTop_toTopOf="@id/btnCancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

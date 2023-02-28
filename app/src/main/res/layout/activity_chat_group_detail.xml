@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/em_base_color_divider">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/em_common_title_bar_height"
+            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleBarDisplayHomeAsUpEnabled="true"
+            app:titleBarTitle="@string/em_chat_group_detail_title" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/em_margin_30">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_group_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="@dimen/em_margin_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.hyphenate.easeui.widget.EaseImageView
+                        android:id="@+id/iv_group_avatar"
+                        android:layout_width="@dimen/adaptive_60dp"
+                        android:layout_height="@dimen/adaptive_60dp"
+                        android:layout_marginStart="@dimen/em_margin_20"
+                        android:layout_marginLeft="@dimen/em_margin_20"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@drawable/ease_group_icon"
+                        app:ease_shape_type="round"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_group_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/em_margin_20"
+                        android:layout_marginLeft="@dimen/em_margin_20"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/em_color_common_text_black"
+                        android:textSize="@dimen/em_size_big"
+                        app:layout_constraintLeft_toRightOf="@id/iv_group_avatar"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="群主" />
+
+                    <TextView
+                        android:id="@+id/tv_group_introduction"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/em_margin_20"
+                        android:layout_marginLeft="@dimen/em_margin_20"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="@dimen/em_margin_20"
+                        android:layout_marginRight="@dimen/em_margin_20"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/em_color_common_text_gray"
+                        android:textSize="@dimen/em_size_small"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toRightOf="@id/iv_group_avatar"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_group_name"
+                        tools:text="群主" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_member"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_group_info">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGroupMemberTitle"
+                        style="@style/em_group_text_item_title"
+                        android:layout_width="0dp"
+                        android:gravity="center_vertical"
+                        android:minHeight="50dp"
+                        android:text="@string/em_chat_group_detail_group_member"
+                        android:drawableEnd="@drawable/em_arrow_right"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_group_member_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="center"
+                        android:textColor="@color/em_color_common_text_gray"
+                        android:textSize="@dimen/em_size_small"
+                        app:layout_constraintBottom_toBottomOf="@id/tvGroupMemberTitle"
+                        app:layout_constraintEnd_toEndOf="@id/tvGroupMemberTitle"
+                        app:layout_constraintTop_toTopOf="@id/tvGroupMemberTitle"
+                        tools:text="16人" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_group_invite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/em_contact_menu_add"
+                        android:gravity="center_vertical"
+                        android:minHeight="40dp"
+                        android:paddingHorizontal="20dp"
+                        android:text="@string/em_chat_group_invite_group_member"
+                        android:textColor="@color/em_color_brand"
+                        android:textSize="@dimen/em_size_small"
+                        android:visibility="visible"
+                        app:drawableTint="@color/em_color_brand"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvGroupMemberTitle" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view_group_divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/em_margin_15"
+                    android:layout_marginLeft="@dimen/em_margin_15"
+                    android:layout_marginEnd="@dimen/em_margin_15"
+                    android:layout_marginRight="@dimen/em_margin_15"
+                    android:background="@drawable/demo_default_divider_list"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_group_info" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_name"
+                    style="@style/em_group_arrow_item"
+                    android:layout_marginTop="@dimen/em_margin_20"
+                    app:arrowItemTitle="@string/em_chat_group_detail_name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_member" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_share_file"
+                    style="@style/em_group_arrow_item"
+                    app:arrowItemTitle="@string/em_chat_group_detail_share_file"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_name" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_notice"
+                    style="@style/em_group_arrow_item"
+                    app:arrowItemTitle="@string/em_chat_group_detail_announcement"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_share_file" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_introduction"
+                    style="@style/em_group_arrow_item"
+                    app:arrowItemTitle="@string/em_chat_group_detail_introduction"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_notice" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_member_manage"
+                    style="@style/em_group_arrow_item"
+                    app:arrowItemShowDivider="false"
+                    app:arrowItemTitle="@string/em_chat_group_detail_member_manage"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_introduction" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_history"
+                    style="@style/em_group_arrow_item"
+                    android:layout_marginTop="@dimen/em_margin_20"
+                    app:arrowItemTitle="@string/em_chat_group_detail_history"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_member_manage" />
+
+                <com.hyphenate.easeim.common.widget.SwitchItemView
+                    android:id="@+id/item_group_not_disturb"
+                    style="@style/em_group_arrow_item"
+                    android:layout_marginTop="@dimen/em_margin_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_history"
+                    app:switchItemTitle="@string/em_chat_group_detail_not_disturb" />
+
+                <com.hyphenate.easeim.common.widget.SwitchItemView
+                    android:id="@+id/item_group_off_push"
+                    style="@style/em_group_arrow_item"
+                    android:visibility="gone"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_not_disturb"
+                    app:switchItemTitle="@string/em_chat_group_detail_off_push" />
+
+                <com.hyphenate.easeim.common.widget.SwitchItemView
+                    android:id="@+id/item_group_top"
+                    style="@style/em_group_arrow_item"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_off_push"
+                    app:switchItemShowDivider="false"
+                    app:switchItemTitle="@string/em_chat_group_detail_top" />
+
+                <com.hyphenate.easeim.common.widget.ArrowItemView
+                    android:id="@+id/item_group_clear_history"
+                    style="@style/em_group_arrow_item"
+                    android:layout_marginTop="@dimen/em_margin_20"
+                    app:arrowItemShowArrow="false"
+                    app:arrowItemTitle="@string/em_chat_group_detail_clear_history"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_top" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_group_refund"
+                    style="@style/em_group_arrow_item"
+                    android:layout_marginTop="@dimen/em_margin_20"
+                    android:gravity="center"
+                    android:text="@string/em_chat_group_detail_refund"
+                    android:textColor="@color/em_dialog_color_btn_warning"
+                    android:textSize="@dimen/em_size_big"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_group_clear_history" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

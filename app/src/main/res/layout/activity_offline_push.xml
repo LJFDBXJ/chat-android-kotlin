@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_bg"
+        android:orientation="vertical">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/em_common_title_bar_height"
+            android:background="@color/white"
+            app:titleBarDisplayHomeAsUpEnabled="true"
+            app:titleBarTitle="@string/push_nick" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etInputNickname"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/demo_nickename_input_bg"
+            android:hint="@string/input_new_nick_hint"
+            android:paddingHorizontal="10dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/demo_button_login_bg"
+            android:text="@string/save"
+            android:textColor="#fff" />
+    </LinearLayout>
+</layout>

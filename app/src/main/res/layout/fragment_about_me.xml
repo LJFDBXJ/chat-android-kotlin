@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userAvatar"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff9f9f9">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clUser"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:background="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar"
+                type="@{1}"
+                url="@{userAvatar}"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ease_default_avatar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/ease_conversation_color_item_name"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/avatar"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="张三" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_userId"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/ease_conversation_color_item_name"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toRightOf="@id/avatar"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="02342234234" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:padding="7dp"
+                android:textColor="@color/ease_conversation_color_item_message"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/avatar"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_nickName"
+                tools:text="ssdd" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/em_margin_15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clUser">
+
+            <com.hyphenate.easeim.common.widget.ArrowItemView
+                android:id="@+id/itemCommonSet"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/em_common_item_height"
+                android:background="@color/white"
+                app:arrowItemAvatarHeight="@dimen/em_about_me_avatar_size"
+                app:arrowItemAvatarSrc="@drawable/d_set"
+                app:arrowItemAvatarWidth="@dimen/em_about_me_avatar_size"
+                app:arrowItemShowAvatar="true"
+                app:arrowItemTitle="@string/em_about_me_set"
+                app:arrowItemTitleSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/itemDeveloperSet"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/em_common_item_height"
+                android:background="@color/white"
+                android:drawableStart="@drawable/d_developer_set"
+                android:drawableEnd="@drawable/em_arrow_right"
+                android:drawablePadding="20dp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:text="@string/em_about_me_developer"
+                android:textColor="@color/em_color_common_text_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/itemCommonSet" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

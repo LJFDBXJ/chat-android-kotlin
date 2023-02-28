@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="entity"
+            type="com.hyphenate.easeui.domain.EaseUser" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hyphenate.easeui.widget.EaseTitleBar
+            android:id="@+id/title_bar_contact_detail"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/em_common_title_bar_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:titleBarDisplayHomeAsUpEnabled="true"
+            app:titleBarMenuResource="@drawable/em_friends_set"
+            app:titleBarTitle="@string/em_friends_detail_title" />
+
+        <com.hyphenate.easeui.widget.EaseImageView
+            android:id="@+id/avatar_user"
+            url="@{entity.avatar}"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ease_default_avatar"
+            app:ease_shape_type="round"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_bar_contact_detail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{entity.username}"
+            android:textColor="@color/em_friends_contact_detail_text_normal"
+            android:textSize="@dimen/em_size_big_notify"
+            app:layout_constraintBottom_toBottomOf="@id/avatar_user"
+            app:layout_constraintLeft_toRightOf="@id/avatar_user"
+            app:layout_constraintTop_toTopOf="@id/avatar_user"
+            tools:text="@tools:sample/full_names" />
+
+        <View
+            android:id="@+id/bottom_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/em_base_color_divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatar_user" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/beginChat"
+            style="@style/em_friends_contact_detail_tv"
+            android:layout_marginTop="24dp"
+            android:text="@string/em_friends_detail_chat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottom_line" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/beginVoice"
+            style="@style/em_friends_contact_detail_tv"
+            android:text="@string/em_friends_detail_voice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beginChat" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/beginVideo"
+            style="@style/em_friends_contact_detail_tv"
+            android:text="@string/em_friends_detail_video"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beginVoice" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_add_contact"
+            style="@style/em_friends_contact_detail_tv"
+            android:text="@string/em_friends_detail_add_contact"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beginVideo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/removeBlack"
+            style="@style/em_friends_contact_detail_tv"
+            android:text="@string/em_friends_move_out_the_blacklist_new"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/beginVideo" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="beginChat,beginVideo,beginVoice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
